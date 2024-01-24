@@ -1,7 +1,3 @@
-//ingresar en el head del login.html
-
-
-
 
 import { ManageAccount } from './firebaseconect.js';
 
@@ -10,9 +6,10 @@ document.getElementById("formulario-sesion").addEventListener("submit", (event) 
 
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
-
+    console.log(email,password);
   const account = new ManageAccount();
   account.authenticate(email, password);
+  console.log("autenticando...")
   
 });
 

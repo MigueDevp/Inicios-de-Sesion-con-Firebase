@@ -18,19 +18,20 @@ const analytics = getAnalytics(app);
 const auth = getAuth();
 
 export class ManageAccount {
-  register(email, password) {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((_) => {
-        window.location.href = "login.html";
-        // Mostrar alerta de registro exitoso
-        alert("Registro exitoso. Serás redirigido a la página de inicio de sesión.");
-      })
-      .catch((error) => {
-        console.error(error.message);
-            // Mostrar alerta de error de registro
+    register(email, password) {
+        console.log("Registrando usuario...", email, password); 
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((_) => {
+            window.location.href = "login.html";
+            console.log(email, password);
+            alert("Registro exitoso. Serás redirigido a la página de inicio de sesión.");
+          })
+          .catch((error) => {
+            console.error(error.message);
             alert("Error al registrar: " + error.message);
-      });
-  }
+          });
+      }
+      
 
   authenticate(email, password) {
     signInWithEmailAndPassword(auth, email, password)
