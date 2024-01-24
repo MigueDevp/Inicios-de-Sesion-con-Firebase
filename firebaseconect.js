@@ -31,7 +31,6 @@ export class ManageAccount {
             alert("Error al registrar: " + error.message);
           });
       }
-      
 
   authenticate(email, password) {
     signInWithEmailAndPassword(auth, email, password)
@@ -50,10 +49,15 @@ export class ManageAccount {
   signOut() {
     signOut(auth)
       .then((_) => {
-        window.location.href = "lobby.html";
+        window.location.href = "login.html";
       })
       .catch((error) => {
         console.error(error.message);
       });
   }
+
+  
 }
+
+
+
